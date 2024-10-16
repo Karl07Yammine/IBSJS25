@@ -1,0 +1,87 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: rgb(245, 245, 245);
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  border-radius: 3%;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  color: rgba(67,152,252,1);
+  color: rgba(67,152,252,1);
+  background-color: #e6e6e6;
+  border-radius: 5rem;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  color: rgba(67,152,252,1);
+  color: rgba(67,152,252,1);
+  background-color: #e6e6e6;
+  border-radius: 5rem;
+}
+.mb-3 {
+  color: rgba(67,152,252,1);
+  color: rgba(67,152,252,1);
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: red;
+}
+
+label {
+  font-size: large;
+  color: rgba(67,152,252,1);
+}
+.support{
+  font-size: xx-large;
+  color: rgba(67,152,252,1);
+}
+img{
+  border-radius: 10%;
+}
+
+.signin-box{
+        box-shadow: 0.15rem 0.15rem 0.45rem #9a9a9a ;
+        border-radius: 1rem;
+}
+
+.info-box{
+        background: rgb(67,252,182);
+        background: linear-gradient(215deg, rgba(67,252,182,1) 0%, rgba(67,152,252,1) 50%, rgba(68,0,255,1) 100%);
+        border-radius: 0 1rem 1rem 0;
+        color: white;
+        align-content: center;
+}
