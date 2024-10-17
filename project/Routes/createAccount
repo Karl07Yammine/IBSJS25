@@ -1,0 +1,42 @@
+const express = require('express');
+const router = express.Router();
+const getUser = require('../Process/findUser');
+const UserModel = require('../Models/User');
+
+const connectDB = require('../Config/mongooseConfig');
+connectDB();
+
+
+router.get('/', async (req, res) => {
+    if (req.query.pass == "aghsd9fayusgdf9") {
+        if (req.query.username){
+            try {  
+                let isTeacher = req.query.isTeacher;
+                isTeacher = isTeacher === "true"
+                const user = await getUser(req.query.username)
+                if (user == false) {
+                    let name = req.query.name;
+                    let username = req.query.username;
+                    let password = req.query.password;
+                    let teacher = isTeacher
+                    let points = 0
+                    const UserDoc = new UserModel({ name, username, password, teacher, points });
+                    await UserDoc.save();
+                    res.send(req.query);
+                } else {
+                    res.send("user taken");
+                }
+            } catch (error) {
+                throw error;
+            }
+        }else{
+            res.send("no username")
+        }
+    }else {
+        res.send("password error");
+        console.log(req.query.pass)
+    }
+    
+});
+
+module.exports = router;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/dashboard.css">
+        <title>Dashboard | IB SJS 25</title>
+</head>
+<body>
+        <div class="container-fluid">
+                 <div class="top-bar row">
+                        <h1>IB SJS 25</h1>
+                 </div>
+                 <hr>
+                 <div class="welcome">
+                        <h2>Welcome <b><%=name %></b> to your IB SJS 25 Dashboard</h2>
+                 </div>
+                 <div class="items">
+                        <div class="item" id="guesswho">
+                                <h2>Guess Who</h2>
+                        </div>
+                        <div class="item">
+                                <h2>Revision Village</h2>
+                                <h4>Coming Soon</h4>
+                        </div>
+                        <div class="item">
+                                <h2>Save My Exams</h2>
+                                <h4>Coming Soon</h4>
+                        </div>
+                        <div class="item">
+                                <h2>Photo Album</h2>
+                                <h4>Coming Soon hawde idk shu rah ysir fiyoun
+                                </h4>
+                        </div>
+                        <div class="item">
+                                <h2>E-Tickets</h2>
+                                <h4>Coming Soon hawde idk shu rah ysir fiyoun
+                                </h4>
+                        </div>
+                        <div class="item">
+                                <h2>Suggestions</h2>
+                                <h4>Coming Soon</h4>
+                        </div>
+                 </div>
+        </div>
+        <script>
+                document.getElementById("guesswho").addEventListener("click", function() {
+                      window.location.href= "/guesswho";
+                })
+        </script>
+</body>
+</html>
