@@ -21,18 +21,22 @@
                                 <div class="guess">
                                         <h2>guesss</h2>
                                 </div>
+                                <div class="guess">
+                                        <h2>guesss</h2>
+                                </div>
                         </div>
                         <div class="right section">
                                 <div class="leaderboard">
                                         <h3>Leaderboard</h3>
                                         <div class="table">
                                                 <div class="rank">
-                                                        1st
+                                                        <p>Rnk</p>
                                                 </div>
                                                 <div class="username">
+                                                        <p>Username</p>
                                                 </div>
                                                 <div class="points">
-                                                        69
+                                                        <p>pts</p>
                                                 </div>
                                         </div>
                                 </div>
@@ -40,5 +44,69 @@
                  </div>
                  
         </div>
+
+        <script>
+                async function fetchTopUsers() {
+    try {
+        // Send a POST request to the backend to get the top users
+        const response = await fetch('/guesswho', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        // Parse the JSON response
+        const topUsers = await response.json();
+
+        // Get the rank, username, and points div elements
+        const rankDiv = document.querySelector('.rank');
+        const usernameDiv = document.querySelector('.username');
+        const pointsDiv = document.querySelector('.points');
+
+        
+
+        // Populate the leaderboard with the top users
+        topUsers.forEach((user, index) => {
+            // Add rank (1st, 2nd, etc.)
+            const rankP = document.createElement('p');
+            rankP.textContent = `${index + 1}${getOrdinalSuffix(index + 1)}`;
+            rankDiv.appendChild(rankP);
+
+            // Add username
+            const usernameP = document.createElement('p');
+            usernameP.textContent = user.username;
+            usernameDiv.appendChild(usernameP);
+
+            // Add points
+            const pointsP = document.createElement('p');
+            pointsP.textContent = user.points;
+            pointsDiv.appendChild(pointsP);
+        });
+    } catch (error) {
+        console.error('Error fetching top users:', error);
+    }
+}
+
+// Helper function to get the ordinal suffix for ranks (e.g., "1st", "2nd", "3rd")
+function getOrdinalSuffix(rank) {
+    const j = rank % 10;
+    const k = rank % 100;
+    if (j == 1 && k != 11) {
+        return "st";
+    }
+    if (j == 2 && k != 12) {
+        return "nd";
+    }
+    if (j == 3 && k != 13) {
+        return "rd";
+    }
+    return "th";
+}
+
+// Call the function to populate the leaderboard
+fetchTopUsers();
+
+              </script>
 </body>
 </html>

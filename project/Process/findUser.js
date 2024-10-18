@@ -9,7 +9,7 @@ const sessionMiddleware = require('../Config/sessionConfig');
 app.use(sessionMiddleware);
 
 async function getUser(username) {
-    const user = await UserModel.findOne({username: username})
+    const user = await UserModel.findOne({username: username});
     if (user) {
         const userData = {
             username: user.username,
@@ -25,5 +25,5 @@ async function getUser(username) {
     }
     
 }
-
+ 
 module.exports = getUser;

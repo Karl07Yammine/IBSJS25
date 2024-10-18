@@ -44,6 +44,7 @@ h1{
         display: flex;
         justify-content: center;
         text-align: center;
+        flex-direction: column;
 }
 .right{
         width: 33%;
@@ -63,6 +64,7 @@ h1{
         border: white solid 1px;
         border-radius: 0.5rem;
         height: 40rem;        
+        margin-top: 4rem;
 }
 
 .table{
@@ -76,4 +78,14 @@ h1{
         border-left: 0.1rem solid white;
         border-right: 0.1rem solid white;
         width: 80%;
+        text-align: center;
+}
+
+.rank, .username, .points{
+        display: flex;
+        flex-direction: column;
+}
+
+p{
+        margin: 0.1rem 0 0.1rem 0;
 }
