@@ -1,7 +1,7 @@
 const connectDB = require('../Config/mongooseConfig');
 const express = require('express');
 const app = express();
-const UserModel = require('../Models/User')
+const UserModel = require('../Models/User');
 
 connectDB();
 

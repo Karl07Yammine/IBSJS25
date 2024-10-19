@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require('path');
 const bodyParser = require("body-parser");
+const fileUpload = require('express-fileupload');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 4300;
 
 
 // Serve static files from the 'Front End' directory
@@ -17,6 +18,8 @@ app.use(sessionMiddleware);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(fileUpload());
 
 // Define a route for the root
 app.get('/', (req, res) => {
@@ -35,6 +38,9 @@ app.use('/createAccount', createAccount);
 
 const guesswho = require('./Routes/guesswho');
 app.use('/guesswho', guesswho);
+
+const adminGuess = require('./Routes/createGuess');
+app.use('/upload', adminGuess);
 
 // Start the server
 app.listen(port, () => {

@@ -6,6 +6,31 @@
         <title>Guess Who Admin Portal</title>
 </head>
 <body>
-        
+        <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <label for="myDropdown">Choose an option:</label>
+                <input list="options" id="myDropdown" name="author" placeholder="Search...">
+
+                <datalist id="options">
+                        <option value="Option 1">
+                        <option value="Option 2">
+                        <option value="Option 3">
+                        <option value="Option 4">
+                        <option value="Option 5">
+                </datalist>
+
+
+                <label for="myDropdown">Choose an option agaiun:</label>
+                <input list="optionss" id="myDropdown" name="answer" placeholder="Search.ss..">
+
+                <datalist id="optionss">
+                        <option value="Option 14">
+                        <option value="Option 23">
+                        <option value="Option 32">
+                        <option value="Option 44">
+                        <option value="Option 55">
+                </datalist>
+                <button type="submit">yesgo</button>
+        </form>
 </body>
 </html>
